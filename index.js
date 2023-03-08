@@ -1,12 +1,3 @@
-// const CLI = require("./lib/cli.js");
-// const inquirer = require("inquirer");
-// const generateSVG = require("./lib/svg");
-// const fs = require("fs");
-
-// const cli = new CLI();
-
-// cli.run();
-
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateSVG = require("./lib/svg");
