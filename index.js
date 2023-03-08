@@ -1,5 +1,52 @@
-const CLI = require("./lib/cli.js");
+// const CLI = require("./lib/cli.js");
+// const inquirer = require("inquirer");
+// const generateSVG = require("./lib/svg");
+// const fs = require("fs");
 
-const cli = new CLI();
+// const cli = new CLI();
 
-cli.run();
+// cli.run();
+
+const inquirer = require("inquirer");
+const fs = require("fs");
+const generateSVG = require("./lib/svg");
+
+const generateLogo = (userData) => {
+  return generateSVG();
+};
+
+const questions = [
+  {
+    type: "input",
+    message: "Enter text for the logo. (Must not be more than 3 characters)",
+    name: "text",
+  },
+  {
+    type: "input",
+    message: "Enter a text color",
+    name: "textColor",
+  },
+  {
+    type: "list",
+    message: "Enter a shape for the logo",
+    choices: ["circle", "square", "triangle"],
+    name: "shape",
+  },
+  {
+    type: "input",
+    message: "Enter a shape color",
+    name: "shapeColor",
+  },
+];
+
+function init() {
+  return inquirer.prompt(questions).then((userData) => {
+    const answers = generateSVG(userData);
+    fs.writeFile("logo.svg", answers, (error) => {
+      error ? console.log(error) : console.log("Your logo was generated");
+    });
+    // console.log(answers);
+  });
+}
+
+init();
