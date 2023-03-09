@@ -19,7 +19,9 @@ The SVG Logo Generator is designed to take user inputs via prompts. The user wil
 
 To install necessary dependencies, run the following command:
 
+```
 npm i
+```
 
 ## Usage
 
@@ -37,7 +39,9 @@ Add an issue or send an email.
 
 To run tests, run the following command:
 
+```
 npm test
+```
 
 ## Questions
 
