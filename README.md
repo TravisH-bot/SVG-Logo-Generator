@@ -4,7 +4,7 @@
 
 ## Description
 
-The SVG Logo Generator is designed to take user inputs via prompts. The user will be asked to enter up to 3 letters, a color for thier text, a style of shape (circle, square, or triangle), and the color for thier shape. Once all four questions are answered, the a logo.svg file will be generted.
+The SVG Logo Generator is designed to take user inputs via prompts. The user will be asked to enter up to 3 letters, a color for their text, a style of shape (circle, square, or triangle), and the color for their shape. Once all four questions are answered, then a logo.svg file will be generated.
 
 ## Table Of Contents
 
@@ -25,7 +25,10 @@ npm i
 
 ## Usage
 
-The repo contains files for index.js for user questions and logo generation, svg.js and shapes.js that construct the shapes and text, as well as testing files to confirm the code. Users will need to run npm i to install depencencies and testing.
+The repo contains files for index.js for user questions and logo generation, svg.js and shapes.js that construct the shapes and text, as well as testing files to confirm the code. Users will need to run npm i to install dependencies and testing.
+
+The following video will demonstrate how the project is used.
+https://drive.google.com/file/d/1nmk44GGGj5ChJ5NpC2ICMVlHF7smCOJq/view
 
 ## License
 
