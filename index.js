@@ -1,35 +1,33 @@
 const inquirer = require("inquirer");
-const fs = require("fs");
+const { writeFile } = require("fs").promises;
 const SVG = require("./lib/svg");
 const { Circle, Square, Triangle } = require("./lib/shapes");
 
-const generateLogo = (userData) => {
-  return newSvg();
+const generateLogo = () => {
+  return inquirer.prompt([
+    {
+      type: "input",
+      message: "Enter text for the logo. (Must not be more than 3 characters)",
+      name: "text",
+    },
+    {
+      type: "input",
+      message: "Enter a text color",
+      name: "textColor",
+    },
+    {
+      type: "list",
+      message: "Enter a shape for the logo",
+      choices: ["circle", "square", "triangle"],
+      name: "shape",
+    },
+    {
+      type: "input",
+      message: "Enter a shape color",
+      name: "shapeColor",
+    },
+  ]);
 };
-
-const questions = [
-  {
-    type: "input",
-    message: "Enter text for the logo. (Must not be more than 3 characters)",
-    name: "text",
-  },
-  {
-    type: "input",
-    message: "Enter a text color",
-    name: "textColor",
-  },
-  {
-    type: "list",
-    message: "Enter a shape for the logo",
-    choices: ["circle", "square", "triangle"],
-    name: "shape",
-  },
-  {
-    type: "input",
-    message: "Enter a shape color",
-    name: "shapeColor",
-  },
-];
 
 const newSvg = (shape) => {
   const logo = new SVG();
@@ -38,9 +36,9 @@ const newSvg = (shape) => {
   return logo.render();
 };
 
-function init() {
-  return inquirer.prompt(questions).then(
-    (userData) => {
+const init = () => {
+  generateLogo()
+    .then((userData) => {
       switch (userData.shape) {
         case "circle":
           return new Circle(
@@ -63,12 +61,10 @@ function init() {
             userData.textColor
           );
       }
-    },
-    fs.writeFile("logo.svg", newSvg(userData), (error) => {
-      error ? console.log(error) : console.log("Your logo was generated");
     })
-  );
-  // console.log(answers);
-}
+    .then((userData) => writeFile("logo.svg", newSvg(userData)))
+    .then(() => console.log("Your logo was generated"))
+    .catch((error) => console.log(error));
+};
 
 init();
