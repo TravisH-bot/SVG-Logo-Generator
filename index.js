@@ -1,8 +1,10 @@
+//adding in the required files and dependencies
 const inquirer = require("inquirer");
 const { writeFile } = require("fs").promises;
 const SVG = require("./lib/svg");
 const { Circle, Square, Triangle } = require("./lib/shapes");
 
+//initial function to prompt the users with questions on how they wish their logo to look
 const generateLogo = () => {
   return inquirer.prompt([
     {
@@ -29,6 +31,7 @@ const generateLogo = () => {
   ]);
 };
 
+//final function that generates the logo
 const newSvg = (shape) => {
   const logo = new SVG();
   logo.setShape(shape);
@@ -36,6 +39,7 @@ const newSvg = (shape) => {
   return logo.render();
 };
 
+//using a switch statement that determines what shape the user has chosen and filling in the chosen attributes for text, textColor, and shapeColor
 const init = () => {
   generateLogo()
     .then((userData) => {
@@ -62,9 +66,11 @@ const init = () => {
           );
       }
     })
+    //function to write the userData to a svg file to display the logo, log a message if the file was generated correctly, and an error if one occurs.
     .then((userData) => writeFile("logo.svg", newSvg(userData)))
     .then(() => console.log("Your logo was generated"))
     .catch((error) => console.log(error));
 };
 
+//function call to initialize the app
 init();

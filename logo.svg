@@ -1,5 +1,5 @@
 
     <svg width="300" height="200">
-    <rect y="50" width="200" height="200" fill="undefined" /><text x="50" y="150" style="font-size:60px;" fill="white">TMH</text></svg>
+    <polygon points="100 15, 200 200, 0 200" fill="yellow" /><text x="50" y="150" style="font-size:60px;" fill="blue">TMH</text></svg>
     
   
