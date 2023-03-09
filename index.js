@@ -42,23 +42,23 @@ const init = () => {
       switch (userData.shape) {
         case "circle":
           return new Circle(
-            userData.shapeColor,
             userData.text,
-            userData.textColor
+            userData.textColor,
+            userData.shapeColor
           );
           break;
         case "square":
           return new Square(
-            userData.shapeColor,
             userData.text,
-            userData.textColor
+            userData.textColor,
+            userData.shapeColor
           );
           break;
         default:
           return new Triangle(
-            userData.shapeColor,
             userData.text,
-            userData.textColor
+            userData.textColor,
+            userData.shapeColor
           );
       }
     })
