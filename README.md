@@ -27,6 +27,24 @@ npm i
 
 The repo contains files for index.js for user questions and logo generation, svg.js and shapes.js that construct the shapes and text, as well as testing files to confirm the code. Users will need to run npm i to install dependencies and testing.
 
+1. Users will need to install Inquirer v8.2.4. Once installed, they will run the command:
+
+```
+node index.js
+```
+![svg1](https://user-images.githubusercontent.com/79767820/223940773-b167467c-a425-4268-9b26-d6a7ccfd5810.png)
+
+2. Once the command has been run, users will then answer prompts for logo text, text color, logo shape, and shape color. 
+
+![svg2](https://user-images.githubusercontent.com/79767820/223941003-86f5132f-efa9-4520-9bf9-4f036ae8911c.png)
+
+![svg3](https://user-images.githubusercontent.com/79767820/223941030-91cf99e0-5a1f-424f-af28-84661276872c.png)
+
+3. Once all prompts have been answered, a svg.logo file will be generated where users can then preview the svg file. It is recommended to have an svg extension installed for easier viewing. 
+
+![svg4](https://user-images.githubusercontent.com/79767820/223941256-6a85da7c-02fc-468e-a49a-f02e7ef229fb.png)
+
+
 The following video will demonstrate how the project is used.
 https://drive.google.com/file/d/1nmk44GGGj5ChJ5NpC2ICMVlHF7smCOJq/view
 
