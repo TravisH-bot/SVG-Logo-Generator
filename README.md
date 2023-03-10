@@ -46,7 +46,7 @@ node index.js
 
 
 The following video will demonstrate how the project is used.
-https://drive.google.com/file/d/1nmk44GGGj5ChJ5NpC2ICMVlHF7smCOJq/view
+https://drive.google.com/file/d/1pfdO8ve4_80IlDphv-EcNT55YI5z9VuA/view
 
 ## License
 
@@ -63,6 +63,8 @@ To run tests, run the following command:
 ```
 npm test
 ```
+
+![svg5](https://user-images.githubusercontent.com/79767820/224195238-543bb40e-21d3-4ed2-8416-523ac67ff506.png)
 
 ## Questions
 
